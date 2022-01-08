@@ -4,18 +4,21 @@ let array = [
     "scissors"
 ]
 
-const playerSelection = prompt("Pick Rock, Paper or Scissors!");
-const computerSelection = computerPlay();
+let playerSelection;
+let computerSelection;
 let computerScore = 0;
 let playerScore = 0;
 game();
 
 function game() {
     
+    for (let round = 0; round < 5; round++) {
+
     playRound(playerSelection, computerSelection);
 
+}
     if (computerScore == playerScore) {
-        alert(`You lost the game! The final score is ${computerScore} : ${playerScore}`);
+        alert(`It is a draw! The final score is ${computerScore} : ${playerScore}`);
     } else if (computerScore > playerScore){
         alert(`You lost the game! The final score is ${computerScore} : ${playerScore}`);
     } else {
@@ -33,6 +36,9 @@ function computerPlay() {
 /* Plays 1 round and displays the outcome */
 
 function playRound(playerSelection, computerSelection) {
+
+    playerSelection = prompt("Pick Rock, Paper or Scissors!");
+    computerSelection = computerPlay();
 
     /* If DRAW */
 
@@ -77,6 +83,7 @@ function playRound(playerSelection, computerSelection) {
                 alert("I do not understand, please check the spelling and try again!");
             }
         }  
+
         }
 
         
