@@ -85,6 +85,8 @@ function playRound(playerSelection, computerSelection) {
 
             } else {
                 alert("I do not understand, please check the spelling and try again!");
+                playerSelection = prompt("Pick Rock, Paper or Scissors!");
+                computerSelection = computerPlay();
             }
         }  
 
