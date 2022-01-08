@@ -15,14 +15,15 @@ function game() {
     for (let round = 0; round < 5; round++) {
 
     playRound(playerSelection, computerSelection);
+    alert(`Current score -  ${playerScore} (you) :  ${computerScore} (computer)`);
 
 }
     if (computerScore == playerScore) {
-        alert(`It is a draw! The final score is ${computerScore} : ${playerScore}`);
+        alert(`It is a draw! The final score is ${computerScore} (computer) : ${playerScore} (you)`);
     } else if (computerScore > playerScore){
-        alert(`You lost the game! The final score is ${computerScore} : ${playerScore}`);
+        alert(`You lost the game! The final score is ${computerScore} (computer) : ${playerScore} (you)`);
     } else {
-        alert(`You won the game! The final score is ${computerScore} : ${playerScore}`);
+        alert(`You won the game! The final score is ${playerScore} (you) : ${computerScore} (computer)`);
     }
     }      
 
@@ -79,6 +80,9 @@ function playRound(playerSelection, computerSelection) {
                     alert("You lost! Rock beats scissors.");
                     computerScore++;
                 }
+
+                /* For everything else */
+
             } else {
                 alert("I do not understand, please check the spelling and try again!");
             }
