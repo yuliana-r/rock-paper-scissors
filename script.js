@@ -1,16 +1,10 @@
-let array = [
-    "rock",
-    "paper",
-    "scissors"
-]
-
 let playerSelection;
 let computerSelection;
 let computerScore = 0;
 let playerScore = 0;
 game();
 
-function game() {
+/*function game() {
     
     for (let round = 0; round < 5; round++) {
 
@@ -19,17 +13,25 @@ function game() {
 
 }
     if (computerScore == playerScore) {
-        alert(`It is a draw! The final score is ${computerScore} (computer) : ${playerScore} (you)`);
+        alert(`It is a draw! The final score is ${computerScore} (computer) : 
+        ${playerScore} (you)`);
     } else if (computerScore > playerScore){
-        alert(`You lost the game! The final score is ${computerScore} (computer) : ${playerScore} (you)`);
+        alert(`You lost the game! The final score is ${computerScore} (computer) : 
+        ${playerScore} (you)`);
     } else {
-        alert(`You won the game! The final score is ${playerScore} (you) : ${computerScore} (computer)`);
+        alert(`You won the game! The final score is ${playerScore} (you) : 
+        ${computerScore} (computer)`);
     }
-    }      
+    } */
 
 /* Computer makes a random choice */
 
 function computerPlay() {
+    let array = [
+        "rock",
+        "paper",
+        "scissors"
+    ]
     let item = array[Math.floor(Math.random() * array.length)];
     return item;
 }
@@ -46,7 +48,7 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === computerSelection) {
         alert("It's a draw!");
     } else {
-        
+
         /* If player picks ROCK */
 
         if (playerSelection.toLowerCase() === "rock") {
@@ -61,36 +63,32 @@ function playRound(playerSelection, computerSelection) {
             /* If player picks PAPER */
 
         } else if (playerSelection.toLowerCase() === "paper") {
-                if (computerSelection === "rock") {
-                    alert("You win! Paper beats rock.");
-                    playerScore++;
-                } else {
-                    alert("You lost! Scissors beat paper.");
-                    computerScore++;
-                }
-            }
-
-            /* If player picks SCISSORS */
-
-            else if (playerSelection.toLowerCase() === "scissors") {
-                if (computerSelection === "paper") {
-                    alert("You win! Scissors beat paper.");
-                    playerScore++;
-                } else {
-                    alert("You lost! Rock beats scissors.");
-                    computerScore++;
-                }
-
-                /* For everything else */
-
+            if (computerSelection === "rock") {
+                alert("You win! Paper beats rock.");
+                playerScore++;
             } else {
-                alert("I do not understand, please check the spelling and try again!");
-                playerSelection = prompt("Pick Rock, Paper or Scissors!");
-                computerSelection = computerPlay();
+                alert("You lost! Scissors beat paper.");
+                computerScore++;
             }
-        }  
-
         }
 
-        
+        /* If player picks SCISSORS */
+        else if (playerSelection.toLowerCase() === "scissors") {
+            if (computerSelection === "paper") {
+                alert("You win! Scissors beat paper.");
+                playerScore++;
+            } else {
+                alert("You lost! Rock beats scissors.");
+                computerScore++;
+            }
 
+            /* For everything else */
+
+        } else {
+            alert("I do not understand, please check the spelling and try again!");
+            playerSelection = prompt("Pick Rock, Paper or Scissors!");
+            computerSelection = computerPlay();
+        }
+    }
+
+}

@@ -1,0 +1,47 @@
+* { border: 1px solid black;}
+
+body {
+    background-color: #e4c6b3;
+}
+
+img {
+    height: 8em;
+}
+
+.selection > button {
+    height: 20em;
+    width: 20em;
+}
+
+.content {
+    flex-direction: column;
+    align-items: center;
+}
+
+.content,
+.scoreboard, 
+.selection,
+.buttons {
+    display: flex;
+    justify-content: center;
+
+}
+
+.scoreboard {
+    gap: 25em;
+}
+
+.selection {
+    gap: 15em;
+}
+
+
+.buttons {
+    gap: 5em;
+}
+
+.choice {
+    height: 12em;
+    width: 12em;
+    background-color: #ffe3db;
+}
