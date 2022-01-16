@@ -2,7 +2,7 @@ let playerSelection;
 let computerSelection;
 let computerScore = 0;
 let playerScore = 0;
-game();
+//game();
 
 /*function game() {
     
@@ -40,7 +40,7 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
 
-    playerSelection = prompt("Pick Rock, Paper or Scissors!");
+   // playerSelection = prompt("Pick Rock, Paper or Scissors!");
     computerSelection = computerPlay();
 
     /* If DRAW */

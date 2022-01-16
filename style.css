@@ -19,7 +19,11 @@ img {
 a {
     margin: 2em auto 0.5em;
     text-decoration: none;
-    color: #372717;
+    color: #443c33;
+}
+
+a:hover {
+    color: #2e2824;
 }
 
 .selection>button {
