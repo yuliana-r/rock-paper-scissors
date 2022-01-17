@@ -15,7 +15,6 @@
 
         <h1>Let's play Rock, Paper, Scissors!</h1>
         <p>Win the game to save the humanity from a CAT-astrophe - it's MEOW or NEVER!</p>
-        <p id="round">Round 1</p>
 
         <div class="scoreboard">
 
@@ -25,8 +24,8 @@
             </div>
 
             <div class="score">
-                <p id="game-score">0 : 0</p>
-                <p>You won the game! You won the game! You won the game!</p>
+                <p id="currentScore"></p>
+                <p id="outcome"></p>
             </div>
 
             <div class="profile">
@@ -36,8 +35,16 @@
         </div>
 
         <div class="selection">
-            <button class="user"></button>
-            <button class="computer"></button>
+            <div id="user">
+                <!-- <img src="./images/rock.png" alt="paw rock" class="current" id="userRock">
+                <img src="./images/paper.png" alt="paw paper" class="current" id="userPaper">
+                <img src="./images/scissors.png" alt="paw scissors" class="current" id="userScissors"> -->
+            </div>
+            <div id="computer">
+                <!-- <img src="./images/rock.png" alt="paw rock" class="current" id="computerRock">
+                <img src="./images/paper.png" alt="paw paper" class="current" id="computerPaper">
+                <img src="./images/scissors.png" alt="paw scissors" class="current" id="computerScissors"> -->
+            </div>
 
         </div>
 
@@ -58,7 +65,8 @@
             </button>
         </div>
 
-        <a href="https://github.com/yuliana-r/rock-paper-scissors" target="_blank"><i class="fab fa-github"></i>Github</a>
+        <a href="https://github.com/yuliana-r/rock-paper-scissors" target="_blank"><i
+                class="fab fa-github"></i>Github</a>
     </div>
 
     <script src="./script.js"></script>

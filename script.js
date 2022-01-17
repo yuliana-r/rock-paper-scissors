@@ -3,27 +3,36 @@ let computerSelection;
 let computerScore = 0;
 let playerScore = 0;
 
-//game();
+const rockBtn = document.getElementById('rock');
+const paperBtn = document.getElementById('paper');
+const scissorsBtn = document.getElementById('scissors');
+const playerChoice = document.getElementById('user');
+const computerChoice = document.getElementById('computer');
+const roundOutcome = document.getElementById('outcome');
+const currentScore = document.getElementById('currentScore');
 
-/*function game() {
-    
+game();
+
+function game() {
+
     for (let round = 0; round < 5; round++) {
 
     playRound(playerSelection, computerSelection);
-    alert(`Current score -  ${playerScore} (you) :  ${computerScore} (computer)`);
+    //console.log(`Current score -  ${playerScore} (you) :  ${computerScore} (computer)`);
+    currentScore.textContent = `${playerScore} : ${computerScore}`;
 
 }
-    if (computerScore == playerScore) {
-        alert(`It is a draw! The final score is ${computerScore} (computer) : 
-        ${playerScore} (you)`);
-    } else if (computerScore > playerScore){
-        alert(`You lost the game! The final score is ${computerScore} (computer) : 
-        ${playerScore} (you)`);
-    } else {
-        alert(`You won the game! The final score is ${playerScore} (you) : 
-        ${computerScore} (computer)`);
+    // if (computerScore == playerScore) {
+    //     console.log(`It is a draw! The final score is ${computerScore} (computer) : 
+    //     ${playerScore} (you)`);
+    // } else if (computerScore > playerScore){
+    //     console.log(`You lost the game! The final score is ${computerScore} (computer) : 
+    //     ${playerScore} (you)`);
+    // } else {
+    //     console.log(`You won the game! The final score is ${playerScore} (you) : 
+    //     ${computerScore} (computer)`);
+    // }
     }
-    } */
 
 /* Computer makes a random choice */
 
@@ -37,55 +46,96 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
 
-   // playerSelection = prompt("Pick Rock, Paper or Scissors!");
-    computerSelection = computerPlay();
-
     /* If DRAW */
 
-    if (playerSelection.toLowerCase() === computerSelection) {
-        alert("It's a draw!");
+    if (playerSelection === computerSelection) {
+        roundOutcome.textContent = "It's a tie!";
     } else {
 
         /* If player picks ROCK */
 
-        if (playerSelection.toLowerCase() === "rock") {
+        if (playerSelection === "rock") {
             if (computerSelection === "paper") {
-                alert("You lost! Paper beats rock.");
+                roundOutcome.textContent = "You lost! Paper beats rock.";
                 computerScore++;
             } else {
-                alert("You win! Rock beats scissors.");
+                roundOutcome.textContent = "You win! Rock beats scissors.";
                 playerScore++;
             }
 
             /* If player picks PAPER */
 
-        } else if (playerSelection.toLowerCase() === "paper") {
+        } else if (playerSelection === "paper") {
             if (computerSelection === "rock") {
-                alert("You win! Paper beats rock.");
+                roundOutcome.textContent = "You win! Paper beats rock.";
                 playerScore++;
             } else {
-                alert("You lost! Scissors beat paper.");
+                roundOutcome.textContent = "You lost! Scissors beat paper.";
                 computerScore++;
             }
         }
 
         /* If player picks SCISSORS */
-        else if (playerSelection.toLowerCase() === "scissors") {
+        else if (playerSelection === "scissors") {
             if (computerSelection === "paper") {
-                alert("You win! Scissors beat paper.");
+                roundOutcome.textContent = "You win! Scissors beat paper.";
                 playerScore++;
             } else {
-                alert("You lost! Rock beats scissors.");
+                roundOutcome.textContent  = "You lost! Rock beats scissors.";
                 computerScore++;
             }
-
-            /* For everything else */
-
-        } else {
-            alert("I do not understand, please check the spelling and try again!");
-            playerSelection = prompt("Pick Rock, Paper or Scissors!");
-            computerSelection = computerPlay();
         }
     }
+}
+
+const rockImage = document.createElement('img');
+rockImage.src ="./images/rock.png"
+const paperImage = document.createElement('img');
+paperImage.src ="./images/paper.png"
+const scissorsImage = document.createElement('img');
+scissorsImage.src ="./images/scissors.png"
+
+rockBtn.addEventListener('click', () => handleChoice('rock'));
+paperBtn.addEventListener('click', () => handleChoice('paper'));
+scissorsBtn.addEventListener('click', () => handleChoice('scissors'));
+
+function handleChoice(playerSelection) {
+
+    computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
+    updateChoice(playerSelection, computerSelection);
 
 }
+
+function updateChoice(playerSelection, computerSelection) {
+    switch (playerSelection) {
+        case 'rock':
+            //playerChoice.appendChild(rockImage);
+            playerChoice.textContent = "rock";
+            break;
+        case 'paper':
+            //playerChoice.appendChild(paperImage);
+            playerChoice.textContent = "paper";
+            break;
+        case 'scissors':
+            //playerChoice.appendChild(scissorsImage);
+            playerChoice.textContent = "scissors";
+            break;
+    }
+
+    switch (computerSelection) {
+        case 'rock':
+            //computerChoice.appendChild(rockImage);
+            computerChoice.textContent = "rock";
+            break;
+        case 'paper':
+            //computerChoice.appendChild(paperImage);
+            computerChoice.textContent = "paper";
+            break;
+        case 'scissors':
+            //computerChoice.appendChild(scissorsImage);
+            computerChoice.textContent = "scissors";
+            break;
+    }
+}
+

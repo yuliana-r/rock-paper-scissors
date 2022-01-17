@@ -26,17 +26,22 @@ a:hover {
     color: #2e2824;
 }
 
-.selection>button {
+.selection>div {
+    align-items: center;
     height: 11em;
     width: 11em;
     background-color: #fef8f5;
     border-style: none;
 }
 
+.current {
+    display: none;
+}
+
 .content>p,
 .score>p {
     font-size: 1.1em;
-    margin: 0.7em;
+    margin: 1em;
 }
 
 .content {
@@ -47,7 +52,8 @@ a:hover {
 .content,
 .selection,
 .buttons,
-.choice {
+.choice,
+.selection>div {
     display: flex;
     justify-content: center;
 }
@@ -57,6 +63,11 @@ a:hover {
     justify-content: space-around;
     gap: 5em;
     text-align: center;
+    align-items: center;
+}
+
+.score {
+    width: 30em;
 }
 
 .selection {
@@ -72,13 +83,12 @@ a:hover {
 button>p,
 .profile>p,
 #game-score,
-#round, h1 {
+h1 {
     font-family: 'Gochi Hand', Arial, Helvetica, sans-serif;
 }
 
-#round,
 #game-score {
-    font-size: 2em;
+    font-size: 3em;
     margin: 0.5em 0 0;
 }
 
