@@ -34,9 +34,6 @@ a:hover {
     border-style: none;
 }
 
-.current {
-    display: none;
-}
 
 .content>p,
 .score>p {

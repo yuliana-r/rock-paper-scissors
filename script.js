@@ -13,17 +13,9 @@ const currentScore = document.getElementById('currentScore');
 
 //game();
 
-function game() {
+//function game() {
 
-    while (playerScore < 5 || computerScore < 5) {
-        playRound(playerSelection, computerSelection);
-        if (playerScore === 5 || computerScore === 5) {
-            alert("Game over");
-            break;
-        }
-    }
-
-
+    //}
 
     // if (computerScore == playerScore) {
     //     console.log(`It is a draw! The final score is ${computerScore} (computer) : 
@@ -35,7 +27,6 @@ function game() {
     //     console.log(`You won the game! The final score is ${playerScore} (you) : 
     //     ${computerScore} (computer)`);
     // }
-}
 
 /* Computer makes a random choice */
 
@@ -59,39 +50,33 @@ function playRound(playerSelection, computerSelection) {
 
         if (playerSelection === "rock") {
             if (computerSelection === "paper") {
-                computerScore++;
                 roundOutcome.textContent = "You lost! Paper beats rock.";
-                currentScore.textContent = `${playerScore} : ${computerScore}`;
+                computerScore++;
             } else {
-                playerScore++;
                 roundOutcome.textContent = "You win! Rock beats scissors.";
-                currentScore.textContent = `${playerScore} : ${computerScore}`;
+                playerScore++;
             }
 
             /* If player picks PAPER */
 
         } else if (playerSelection === "paper") {
             if (computerSelection === "rock") {
-                playerScore++;
                 roundOutcome.textContent = "You win! Paper beats rock.";
-                currentScore.textContent = `${playerScore} : ${computerScore}`;
+                playerScore++;
             } else {
-                computerScore++;
                 roundOutcome.textContent = "You lost! Scissors beat paper.";
-                currentScore.textContent = `${playerScore} : ${computerScore}`;
+                computerScore++;
             }
         }
 
         /* If player picks SCISSORS */
         else if (playerSelection === "scissors") {
             if (computerSelection === "paper") {
-                playerScore++;
                 roundOutcome.textContent = "You win! Scissors beat paper.";
-                currentScore.textContent = `${playerScore} : ${computerScore}`;
+                playerScore++;
             } else {
-                computerScore++;
                 roundOutcome.textContent = "You lost! Rock beats scissors.";
-                currentScore.textContent = `${playerScore} : ${computerScore}`;
+                computerScore++;
             }
         }
     }
@@ -102,11 +87,16 @@ paperBtn.addEventListener('click', () => handleChoice('paper'));
 scissorsBtn.addEventListener('click', () => handleChoice('scissors'));
 
 function handleChoice(playerSelection) {
-
     computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
     updateChoice(playerSelection, computerSelection);
 
+    currentScore.textContent = `${playerScore} : ${computerScore}`;
+
+    if(playerScore === 5 || computerScore === 5) {
+        alert("Game over");
+    }
+    
 }
 
 function updateChoice(playerSelection, computerSelection) {
