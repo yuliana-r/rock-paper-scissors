@@ -2,6 +2,7 @@ let playerSelection;
 let computerSelection;
 let computerScore = 0;
 let playerScore = 0;
+
 //game();
 
 /*function game() {
@@ -27,11 +28,7 @@ let playerScore = 0;
 /* Computer makes a random choice */
 
 function computerPlay() {
-    let array = [
-        "rock",
-        "paper",
-        "scissors"
-    ]
+    let array = ["rock", "paper", "scissors"];
     let item = array[Math.floor(Math.random() * array.length)];
     return item;
 }

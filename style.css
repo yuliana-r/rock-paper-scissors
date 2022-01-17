@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 
 body {
-    background-color: #fef5f0;
+    background-color: #fef8f5;
     font-family: Arial, Helvetica, sans-serif;
     color: #332d26;
 }
@@ -29,8 +29,14 @@ a:hover {
 .selection>button {
     height: 11em;
     width: 11em;
-    background-color: #fef5f0;
+    background-color: #fef8f5;
     border-style: none;
+}
+
+.content>p,
+.score>p {
+    font-size: 1.1em;
+    margin: 0.7em;
 }
 
 .content {
@@ -49,7 +55,7 @@ a:hover {
 .scoreboard {
     display: flex;
     justify-content: space-around;
-    gap: 8em;
+    gap: 5em;
     text-align: center;
 }
 
