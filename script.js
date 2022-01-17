@@ -11,17 +11,20 @@ const computerChoice = document.getElementById('computer');
 const roundOutcome = document.getElementById('outcome');
 const currentScore = document.getElementById('currentScore');
 
-game();
+//game();
 
 function game() {
 
-    for (let round = 0; round < 5; round++) {
+    while (playerScore < 5 || computerScore < 5) {
+        playRound(playerSelection, computerSelection);
+        if (playerScore === 5 || computerScore === 5) {
+            alert("Game over");
+            break;
+        }
+    }
 
-    playRound(playerSelection, computerSelection);
-    //console.log(`Current score -  ${playerScore} (you) :  ${computerScore} (computer)`);
-    currentScore.textContent = `${playerScore} : ${computerScore}`;
 
-}
+
     // if (computerScore == playerScore) {
     //     console.log(`It is a draw! The final score is ${computerScore} (computer) : 
     //     ${playerScore} (you)`);
@@ -32,7 +35,7 @@ function game() {
     //     console.log(`You won the game! The final score is ${playerScore} (you) : 
     //     ${computerScore} (computer)`);
     // }
-    }
+}
 
 /* Computer makes a random choice */
 
@@ -56,44 +59,43 @@ function playRound(playerSelection, computerSelection) {
 
         if (playerSelection === "rock") {
             if (computerSelection === "paper") {
-                roundOutcome.textContent = "You lost! Paper beats rock.";
                 computerScore++;
+                roundOutcome.textContent = "You lost! Paper beats rock.";
+                currentScore.textContent = `${playerScore} : ${computerScore}`;
             } else {
-                roundOutcome.textContent = "You win! Rock beats scissors.";
                 playerScore++;
+                roundOutcome.textContent = "You win! Rock beats scissors.";
+                currentScore.textContent = `${playerScore} : ${computerScore}`;
             }
 
             /* If player picks PAPER */
 
         } else if (playerSelection === "paper") {
             if (computerSelection === "rock") {
-                roundOutcome.textContent = "You win! Paper beats rock.";
                 playerScore++;
+                roundOutcome.textContent = "You win! Paper beats rock.";
+                currentScore.textContent = `${playerScore} : ${computerScore}`;
             } else {
-                roundOutcome.textContent = "You lost! Scissors beat paper.";
                 computerScore++;
+                roundOutcome.textContent = "You lost! Scissors beat paper.";
+                currentScore.textContent = `${playerScore} : ${computerScore}`;
             }
         }
 
         /* If player picks SCISSORS */
         else if (playerSelection === "scissors") {
             if (computerSelection === "paper") {
-                roundOutcome.textContent = "You win! Scissors beat paper.";
                 playerScore++;
+                roundOutcome.textContent = "You win! Scissors beat paper.";
+                currentScore.textContent = `${playerScore} : ${computerScore}`;
             } else {
-                roundOutcome.textContent  = "You lost! Rock beats scissors.";
                 computerScore++;
+                roundOutcome.textContent = "You lost! Rock beats scissors.";
+                currentScore.textContent = `${playerScore} : ${computerScore}`;
             }
         }
     }
 }
-
-const rockImage = document.createElement('img');
-rockImage.src ="./images/rock.png"
-const paperImage = document.createElement('img');
-paperImage.src ="./images/paper.png"
-const scissorsImage = document.createElement('img');
-scissorsImage.src ="./images/scissors.png"
 
 rockBtn.addEventListener('click', () => handleChoice('rock'));
 paperBtn.addEventListener('click', () => handleChoice('paper'));
@@ -110,32 +112,25 @@ function handleChoice(playerSelection) {
 function updateChoice(playerSelection, computerSelection) {
     switch (playerSelection) {
         case 'rock':
-            //playerChoice.appendChild(rockImage);
-            playerChoice.textContent = "rock";
+            playerChoice.innerHTML = "<img src='./images/rock.png'>";
             break;
         case 'paper':
-            //playerChoice.appendChild(paperImage);
-            playerChoice.textContent = "paper";
+            playerChoice.innerHTML = "<img src='./images/paper.png'>";
             break;
         case 'scissors':
-            //playerChoice.appendChild(scissorsImage);
-            playerChoice.textContent = "scissors";
+            playerChoice.innerHTML = "<img src='./images/scissors.png'>";
             break;
     }
 
     switch (computerSelection) {
         case 'rock':
-            //computerChoice.appendChild(rockImage);
-            computerChoice.textContent = "rock";
+            computerChoice.innerHTML = "<img src='./images/rock.png'>";
             break;
         case 'paper':
-            //computerChoice.appendChild(paperImage);
-            computerChoice.textContent = "paper";
+            computerChoice.innerHTML = "<img src='./images/paper.png'>";
             break;
         case 'scissors':
-            //computerChoice.appendChild(scissorsImage);
-            computerChoice.textContent = "scissors";
+            computerChoice.innerHTML = "<img src='./images/scissors.png'>";
             break;
     }
 }
-

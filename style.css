@@ -82,12 +82,12 @@ a:hover {
 
 button>p,
 .profile>p,
-#game-score,
+#currentScore,
 h1 {
     font-family: 'Gochi Hand', Arial, Helvetica, sans-serif;
 }
 
-#game-score {
+#currentScore {
     font-size: 3em;
     margin: 0.5em 0 0;
 }
