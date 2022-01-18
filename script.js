@@ -10,23 +10,9 @@ const playerChoice = document.getElementById('user');
 const computerChoice = document.getElementById('computer');
 const roundOutcome = document.getElementById('outcome');
 const currentScore = document.getElementById('currentScore');
-
-//game();
-
-//function game() {
-
-    //}
-
-    // if (computerScore == playerScore) {
-    //     console.log(`It is a draw! The final score is ${computerScore} (computer) : 
-    //     ${playerScore} (you)`);
-    // } else if (computerScore > playerScore){
-    //     console.log(`You lost the game! The final score is ${computerScore} (computer) : 
-    //     ${playerScore} (you)`);
-    // } else {
-    //     console.log(`You won the game! The final score is ${playerScore} (you) : 
-    //     ${computerScore} (computer)`);
-    // }
+const gameOutcome = document.getElementById('gameOutcome');
+const restart = document.getElementById('restart');
+const overlay = document.getElementById('overlay');
 
 /* Computer makes a random choice */
 
@@ -89,14 +75,9 @@ scissorsBtn.addEventListener('click', () => handleChoice('scissors'));
 function handleChoice(playerSelection) {
     computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
+    updateScore();
     updateChoice(playerSelection, computerSelection);
-
-    currentScore.textContent = `${playerScore} : ${computerScore}`;
-
-    if(playerScore === 5 || computerScore === 5) {
-        alert("Game over");
-    }
-    
+    isGameOver();
 }
 
 function updateChoice(playerSelection, computerSelection) {
@@ -123,4 +104,32 @@ function updateChoice(playerSelection, computerSelection) {
             computerChoice.innerHTML = "<img src='./images/scissors.png'>";
             break;
     }
+}
+
+function updateScore() {
+    currentScore.textContent = `${playerScore} : ${computerScore}`;
+}
+
+function isGameOver() {
+    if(playerScore === 5 || computerScore === 5) {
+        overlay.style.display = "block";
+        if (playerScore > computerScore) {
+            gameOutcome.textContent = "PAW-some - you won the game!";
+        } else {
+            gameOutcome.textContent = "CLAW-ful - you lost the game!"
+        }
+        
+    }
+}
+
+restart.addEventListener('click', restartGame);
+
+function restartGame() {
+    overlay.style.display = "none";
+    computerScore = 0;
+    playerScore = 0;
+    playerChoice.innerHTML = "";
+    computerChoice.innerHTML = "";
+    currentScore.textContent = `${playerScore} : ${computerScore}`;
+    roundOutcome.textContent = "First to score 5 points wins the game!";
 }
