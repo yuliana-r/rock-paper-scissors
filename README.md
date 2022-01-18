@@ -2,6 +2,7 @@
 Simple implementation of the classic "Rock, Paper, Scissors game". - now with FURmidable puns :) 
 
 <a href="https://yuliana-r.github.io/rock-paper-scissors/">Live Preview</a>
+<img src="./images/demo-1.png">
 
 Images source - <a href="https://www.vecteezy.com/free-vector/cartoon">Cartoon Vectors by Vecteezy</a>
 
