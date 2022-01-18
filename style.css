@@ -1,7 +1,8 @@
 /** { border: 1px solid black;}*/
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -34,6 +35,21 @@ a:hover {
     color: #2e2824;
 }
 
+button>p,
+.profile>p {
+    font-size: 1.5em;
+    color: #443c33;
+    margin: 0;
+}
+
+button>p,
+.profile>p,
+#currentScore,
+h1,
+#restart {
+    font-family: 'Gochi Hand', Arial, Helvetica, sans-serif;
+}
+
 .selection>div {
     align-items: center;
     height: 11em;
@@ -60,7 +76,8 @@ a:hover {
 .buttons,
 .choice,
 .selection>div,
-#modal, #overlay {
+#modal,
+#overlay {
     display: flex;
     justify-content: center;
 }
@@ -87,23 +104,9 @@ a:hover {
     padding: 1em 2em;
 }
 
-button>p,
-.profile>p,
-#currentScore,
-h1, #restart {
-    font-family: 'Gochi Hand', Arial, Helvetica, sans-serif;
-}
-
 #currentScore {
     font-size: 3em;
     margin: 0.5em 0 0;
-}
-
-button>p,
-.profile>p {
-    font-size: 1.5em;
-    color: #443c33;
-    margin: 0;
 }
 
 .choice {
@@ -149,7 +152,7 @@ i {
 }
 
 #modal {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     gap: 0.5em;
     position: relative;
@@ -160,7 +163,7 @@ i {
     border: 1px solid #a08b7d;
     width: 15em;
     margin: auto;
-    height: 7em; 
+    height: 7em;
     font-size: 1.1em;
     padding: 1em 0.75em;
 }

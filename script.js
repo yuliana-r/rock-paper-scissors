@@ -111,14 +111,14 @@ function updateScore() {
 }
 
 function isGameOver() {
-    if(playerScore === 5 || computerScore === 5) {
+    if (playerScore === 5 || computerScore === 5) {
         overlay.style.display = "block";
         if (playerScore > computerScore) {
             gameOutcome.textContent = "PAW-some - you won the game!";
         } else {
             gameOutcome.textContent = "CLAW-ful - you lost the game!"
         }
-        
+
     }
 }
 
