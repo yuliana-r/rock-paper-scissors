@@ -1,7 +1,9 @@
 # Rock-Paper-Scissors
 ## Introduction
 
-This project is a simple cat-themed implementation of the classic RPS game. It is built using the standard front-end stack of HTML, CSS and JavaScript.
+This project is a simple cat-themed implementation of the classic RPS game. It is built using the standard front-end stack of HTML, CSS and basic JavaScript.
+
+The project primarily demonstrates basic programming logic, JS fundamentals and DOM manipulation.
 
 ## Preview
 
