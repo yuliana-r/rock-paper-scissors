@@ -1,11 +1,14 @@
-# rock-paper-scissors
-Simple implementation of the classic "Rock, Paper, Scissors game". - now with FURmidable puns :) 
-Completed as part of The Odin Project curriculum.
+# Rock-Paper-Scissors
+## Introduction
 
-<a href="https://yuliana-r.github.io/rock-paper-scissors/">Live Preview</a>
-<img src="./images/demo-1.png">
-<img src="./images/demo-2.png">
+This project is a simple cat-themed implementation of the classic RPS game. It is built using the standard front-end stack of HTML, CSS and JavaScript.
 
-Images source - <a href="https://www.vecteezy.com/free-vector/cartoon">Cartoon Vectors by Vecteezy</a>
+## Preview
 
-Tab icon - <a href='https://www.pngaaa.com/detail/2550439'>PngAAA</a>
+[![Rock Paper Scissors](./demo.png)](https://yuliana-r.github.io/rock-paper-scissors/)
+
+## Media credits:
+
+1. Free Vector: https://www.vecteezy.com/free-vector/cartoon
+
+2. PngAAA: https://www.pngaaa.com/detail/2550439
